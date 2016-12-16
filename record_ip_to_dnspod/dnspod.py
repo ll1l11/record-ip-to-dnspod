@@ -24,8 +24,8 @@ class DNSPodClient(object):
             'error_on_empty': 'no',
         }
         req_data.update(data)
-        req_data = urlencode(data).encode('utf-8')
-        req = Request(url, data, self.headers)
+        req_data = urlencode(req_data).encode('utf-8')
+        req = Request(url, req_data, self.headers)
         resp = urlopen(req)
         content = resp.read().decode('utf-8')
         logging.info('DNSPodClient post data:\nurl: %s\ndata: %s\n'
@@ -73,6 +73,15 @@ class DNSPodClient(object):
             'record_type': 'A',
             'record_line': '默认',
             'value': ip,
+        }
+        return self._post(path, data)
+
+    def record_remove(self, record_id):
+        """删除记录"""
+        path = '/Record.Remove'
+        data = {
+            'domain': self.domain,
+            'record_id': record_id,
         }
         return self._post(path, data)
 
