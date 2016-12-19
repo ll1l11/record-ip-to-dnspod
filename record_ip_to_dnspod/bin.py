@@ -87,3 +87,7 @@ def main():
 
     operation_record(client, interface, exclude_ips)
     logging.info('finish')
+
+
+if __name__ == '__main__':
+    main()
