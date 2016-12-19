@@ -1,7 +1,8 @@
 record-ip-to-dnspod
 ===================
 
-Record machine's ip to DNSpod via DNSPod's API.
+Record machine's ip to DNSpod via `DNSPod API`_.
+
 
 
 示例配置文件::
@@ -22,8 +23,8 @@ Record machine's ip to DNSpod via DNSPod's API.
 
 - 必填配置项
 
-log_path
-token
+log_path        日志路径
+token           DNSPod API的Token_, 例如：13490,6b5976c68aba5b14a0558b77c17c3932&format=json
 email
 domain
 sub_domain
@@ -33,3 +34,7 @@ sub_domain
 
 interface       只记录指定的网卡，例如: eth0
 excluet-ips     不记录下面的ip， 比如'127.0.0.1,172.16.0.1'
+
+
+.. _Token: https://support.dnspod.cn/Kb/showarticle/tsid/227
+.. _DNSPod API: http://www.dnspod.cn/docs/index.html
